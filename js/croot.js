@@ -1,14 +1,13 @@
 import {map,overlay} from './config/peta.js';
 import {toLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
-
-
-const content = document.getElementById('popup-content');
-const closer = document.getElementById('popup-closer');
+import {clickpopup} from './template/popup.js';
+import {setInner,textBlur} from 'https://jscroot.github.io/element/croot.js';
 
 
 closer.onclick = function () {
   overlay.setPosition(undefined);
+  textBlur('popup-closer');
   closer.blur();
   return false;
 };
@@ -16,7 +15,8 @@ closer.onclick = function () {
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
   //const hdms = toStringHDMS(toLonLat(coordinate));
-
-  content.innerHTML = '<p>Posisi anda:</p><code>' + coordinate + '</code>';
+  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[2]).replace('#HDMS#',toStringHDMS(coordinate));
+  setInner('popup-content',msg);
+  //content.innerHTML = '<p>Posisi anda:</p><code>' + coordinate + '</code>';
   overlay.setPosition(coordinate);
 });

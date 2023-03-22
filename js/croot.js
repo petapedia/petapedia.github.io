@@ -1,23 +1,19 @@
-import leaflet from 'https://cdn.skypack.dev/leaflet';
+import Map from 'https://petapedia.github.io/openlayers/src/ol/Map';
+import View from 'https://petapedia.github.io/openlayers/src/ol/View';
+import TileLayer from 'https://petapedia.github.io/openlayers/src/ol/layer/Tile';
+import XYZ from 'https://petapedia.github.io/openlayers/src/ol/source/XYZ';
 
-
-
-let map = L.map('map').setView([51.505, -0.09], 13);
-
-
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">PetaPedia</a>'
-}).addTo(map);
-
-var popup = L.popup();
-
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("Anda klik pada posisi : " + e.latlng.toString())
-        .openOn(map);
-}
-
-map.on('click', onMapClick);
+new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new XYZ({
+        url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+      })
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});

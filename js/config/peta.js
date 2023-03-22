@@ -5,6 +5,7 @@ import XYZ from 'https://petapedia.github.io/ol/v7.3.0/source/XYZ.js';
 import OSM from 'https://petapedia.github.io/ol/v7.3.0/source/OSM.js';
 import {useGeographic} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
+import {container} from 'https://jscroot.github.io/element/croot.js';
 
 const attributions =
   '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; PetaPedia</a> ' +
@@ -25,10 +26,10 @@ const defaultstartmap = new View({
   zoom: 9,
 });
 
-const container = document.getElementById('popup');
+//const container = document.getElementById('popup');
 
 export const overlay = new Overlay({
-    element: container,
+    element: container('popup'),
     autoPan: {
       animation: {
         duration: 250,

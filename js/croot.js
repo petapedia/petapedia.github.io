@@ -20,7 +20,7 @@ function onSubmitPopupClick() {
   let lat = getValue('lat');
   let volume = getValue('volume');
   let data = {long,lat,volume};
-  postWithToken("https://foo.bar","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
+  postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
   overlay.setPosition(undefined);
   textBlur('popup-closer');
   return false;

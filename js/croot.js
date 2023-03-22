@@ -32,7 +32,7 @@ onClick('cogbutton',onSubmitPopupClick);
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
   let tile = fromLonLat(coordinate)
-  let msg = clickpopup.replace("/#LONG#/g",coordinate[0]).replace("/#LAT#/g",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
+  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
   setInner('popup-content',msg);
   overlay.setPosition(coordinate);
 });

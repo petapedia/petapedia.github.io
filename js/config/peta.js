@@ -3,13 +3,11 @@ import View from 'https://petapedia.github.io/ol/v7.3.0/View.js';
 import TileLayer from 'https://petapedia.github.io/ol/v7.3.0/layer/Tile.js';
 import XYZ from 'https://petapedia.github.io/ol/v7.3.0/source/XYZ.js';
 import OSM from 'https://petapedia.github.io/ol/v7.3.0/source/OSM.js';
-import {useGeographic} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
+import {fromLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
 import {container} from 'https://jscroot.github.io/element/croot.js';
 
 const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
-
-useGeographic();
 
 const place = [107.13563336552649,-6.8165156551551505];
 
@@ -18,7 +16,7 @@ const basemap = new TileLayer({
 });
 
 const defaultstartmap = new View({
-  center: place,
+  center: fromLonLat(place),
   zoom: 9,
 });
 

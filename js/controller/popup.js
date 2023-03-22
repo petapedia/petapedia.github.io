@@ -1,4 +1,4 @@
-import {fromLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
+import {toLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
 import {overlay} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
@@ -27,8 +27,8 @@ function afterSubmitCOG(result){
 }
 
 export function onMapClick(evt) {
-    const coordinate = evt.coordinate;
-    let tile = fromLonLat(coordinate);
+    const tile = evt.coordinate;
+    let coordinate = toLonLat(tile);
     let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
     setInner('popup-content',msg);
     setValue('long',coordinate[0]);

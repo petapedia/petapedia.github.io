@@ -1,10 +1,11 @@
 export const clickpopup = `
-<b>Input Center of Gravity</b>
+<b>Input Center of Gravity</b><br>
 Long : #LONG#<br>
 Lat  : #LAT#<br>
-XY   : #TILE#<br>
+X   : #X#<br>
+Y   : #Y#<br>
 HDMS : #HDMS#<br>
-Volume : <input type="text" id="name" name="name" required><br>
+Volume : <input type="text" id="name" name="name" required>
 <button class="favorite styled"
         type="button">
     Kirim

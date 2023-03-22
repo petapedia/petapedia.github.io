@@ -1,5 +1,7 @@
 import {map} from './config/peta.js';
 import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
+import {toLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
+import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
 
 const container = document.getElementById('popup');
 const content = document.getElementById('popup-content');
@@ -22,7 +24,8 @@ closer.onclick = function () {
 
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
+  const hdms = toStringHDMS(toLonLat(coordinate));
 
-  content.innerHTML = '<p>You clicked here:</p><code>' + coordinate + '</code>';
+  content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>';
   overlay.setPosition(coordinate);
 });

@@ -1,6 +1,7 @@
 import leaflet from 'https://cdn.skypack.dev/leaflet';
+import map from './config/map.js';
 
-var map = leaflet.L.map('map').setView([51.505, -0.09], 13);
+
 
 
 leaflet.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

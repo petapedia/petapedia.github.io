@@ -29,7 +29,7 @@ export const overlay = new Overlay({
     },
   });
 
-export const map = new Map({
+export let map = new Map({
   overlays: [overlay],
   target: 'map',
   layers: [

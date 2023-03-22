@@ -8,7 +8,7 @@ import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
 import {container} from 'https://jscroot.github.io/element/croot.js';
 
 const attributions =
-  '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; PetaPedia</a> ' +
+  '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia</a> ' +
   '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
 
 useGeographic();

@@ -11,10 +11,6 @@ export function onClosePopupClick() {
     return false;
 }
 
-function afterSubmitCOG(result){
-    console.log(result);
-}
-
 export function onSubmitPopupClick() {
     let long = getValue('long');
     let lat = getValue('lat');
@@ -24,6 +20,10 @@ export function onSubmitPopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     return false;
+}
+
+function afterSubmitCOG(result){
+    console.log(result);
 }
 
 export function onMapClick(evt) {

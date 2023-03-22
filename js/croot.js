@@ -1,7 +1,7 @@
-import Map from 'https://petapedia.github.io/openlayers/src/ol/Map';
-import View from 'https://petapedia.github.io/openlayers/src/ol/View';
-import TileLayer from 'https://petapedia.github.io/openlayers/src/ol/layer/Tile';
-import XYZ from 'https://petapedia.github.io/openlayers/src/ol/source/XYZ';
+import Map from 'https://petapedia.github.io/openlayers/src/ol/Map.js';
+import View from 'https://petapedia.github.io/openlayers/src/ol/View.js';
+import TileLayer from 'https://petapedia.github.io/openlayers/src/ol/layer/Tile.js';
+import XYZ from 'https://petapedia.github.io/openlayers/src/ol/source/XYZ.js';
 
 new Map({
   target: 'map',

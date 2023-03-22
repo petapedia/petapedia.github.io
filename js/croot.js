@@ -4,6 +4,10 @@ import TileLayer from 'https://petapedia.github.io/ol/v7.3.0/layer/Tile.js';
 import XYZ from 'https://petapedia.github.io/ol/v7.3.0/source/XYZ.js';
 import OSM from 'https://petapedia.github.io/ol/v7.3.0/source/OSM.js';
 
+
+const place = [-110, 45];
+
+
 const map = new Map({
   target: 'map',
   layers: [
@@ -12,7 +16,7 @@ const map = new Map({
     }),
   ],
   view: new View({
-    center: [10, 10],
+    center: place,
     zoom: 2,
   }),
 });

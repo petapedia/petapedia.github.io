@@ -1,5 +1,4 @@
-import {map} from './config/peta.js';
-import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
+import {map,overlay} from './config/peta.js';
 import {toLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
 
@@ -7,14 +6,6 @@ const container = document.getElementById('popup');
 const content = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
 
-const overlay = new Overlay({
-  element: container,
-  autoPan: {
-    animation: {
-      duration: 250,
-    },
-  },
-});
 
 closer.onclick = function () {
   overlay.setPosition(undefined);

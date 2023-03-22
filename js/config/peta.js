@@ -16,9 +16,7 @@ useGeographic();
 const place = [107.13563336552649,-6.8165156551551505];
 
 const basemap = new TileLayer({
-  source: new OSM(),
-  attributions: attributions,
-
+  source: new OSM({attributions: attributions,}),
 });
 
 const defaultstartmap = new View({

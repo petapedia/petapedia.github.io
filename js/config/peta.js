@@ -25,6 +25,8 @@ const defaultstartmap = new View({
   zoom: 9,
 });
 
+const container = document.getElementById('popup');
+
 export const overlay = new Overlay({
     element: container,
     autoPan: {

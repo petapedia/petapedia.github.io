@@ -15,8 +15,8 @@ closer.onclick = function () {
 
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
-  const hdms = toStringHDMS(toLonLat(coordinate));
+  //const hdms = toStringHDMS(toLonLat(coordinate));
 
-  content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>';
+  content.innerHTML = '<p>Posisi anda:</p><code>' + coordinate + '</code>';
   overlay.setPosition(coordinate);
 });

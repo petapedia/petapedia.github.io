@@ -3,12 +3,12 @@ import View from 'https://petapedia.github.io/openlayers/src/ol/View.js';
 import TileLayer from 'https://petapedia.github.io/openlayers/src/ol/layer/Tile.js';
 import XYZ from 'https://petapedia.github.io/openlayers/src/ol/source/XYZ.js';
 
-tl = new TileLayer({
+const tl = new TileLayer({
     source: new XYZ({
       url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
     })
   });
-vw = new View({
+const vw = new View({
     center: [ -6.7915964,107.2664323],
     zoom: 7
   });

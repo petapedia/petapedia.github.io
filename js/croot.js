@@ -16,7 +16,7 @@ onClick('popup-closer',onClosePopupClick);
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
   //const hdms = toStringHDMS(toLonLat(coordinate));
-  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[2]).replace('#HDMS#',toStringHDMS(coordinate));
+  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#HDMS#',toStringHDMS(coordinate));
   setInner('popup-content',msg);
   //content.innerHTML = '<p>Posisi anda:</p><code>' + coordinate + '</code>';
   overlay.setPosition(coordinate);

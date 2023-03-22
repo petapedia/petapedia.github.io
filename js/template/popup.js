@@ -1,15 +1,14 @@
 export const clickpopup = `
-<h3>Posisi anda:</h3>
-<p>Long : #LONG#</p>
-<p>Lat  : #LAT#</p>
-<p>Tile : #TILE#</p>
-<p>HDMS : #HDMS#</p>
-<p>Volume : <input type="text" id="name" name="name" required
-minlength="4" maxlength="8" size="10"></p>
+<b>Input Center of Gravity</b>
+Long : #LONG#
+Lat  : #LAT#
+Tile : #TILE#
+HDMS : #HDMS#
+Volume : <input type="text" id="name" name="name" required>
 <button class="favorite styled"
         type="button">
     Kirim
 </button>
-<p><a href="#">hapus marker ini</a></p>
+<a href="#">hapus marker ini</a>
 `
 

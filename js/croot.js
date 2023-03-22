@@ -9,16 +9,19 @@ useGeographic();
 
 const place = [107.13563336552649,-6.8165156551551505];
 
+const basemap = new TileLayer({
+  source: new OSM(),
+});
+
+const defaultstartmap = new View({
+  center: place,
+  zoom: 9,
+});
 
 const map = new Map({
   target: 'map',
   layers: [
-    new TileLayer({
-      source: new OSM(),
-    }),
+    basemap,
   ],
-  view: new View({
-    center: place,
-    zoom: 9,
-  }),
+  view: defaultstartmap,
 });

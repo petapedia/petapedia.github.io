@@ -2,7 +2,7 @@ export const clickpopup = `
 <b>Input Center of Gravity</b>
 Long : #LONG#
 Lat  : #LAT#
-Tile : #TILE#
+XY   : #TILE#
 HDMS : #HDMS#
 Volume : <input type="text" id="name" name="name" required>
 <button class="favorite styled"

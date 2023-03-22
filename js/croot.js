@@ -1,5 +1,5 @@
 import {map,overlay} from './config/peta.js';
-import {fromLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
+import {fromLonLat,transform} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
 import {clickpopup} from './template/popup.js';
 import {setInner,textBlur,onClick, getValue} from 'https://jscroot.github.io/element/croot.js';
@@ -32,7 +32,8 @@ onClick('cogbutton',onSubmitPopupClick);
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;
   let tile = fromLonLat(coordinate)
-  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
+  let epsg3857 = transform(coordinate, 'EPSG:4326','EPSG:3857');
+  let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate)).replace("#3857#",epsg3857);
   setInner('popup-content',msg);
   overlay.setPosition(coordinate);
 });

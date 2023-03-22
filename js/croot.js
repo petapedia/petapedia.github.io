@@ -21,6 +21,8 @@ closer.onclick = function () {
 };
 
 map.on('singleclick', function (evt) {
-  content.innerHTML = '<p>You clicked here:</p><code>' + evt.coordinate + '</code>';
+  const coordinate = evt.coordinate;
+
+  content.innerHTML = '<p>You clicked here:</p><code>' + coordinate + '</code>';
   overlay.setPosition(coordinate);
 });

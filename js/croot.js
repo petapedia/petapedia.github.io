@@ -1,5 +1,5 @@
 import leaflet from 'https://cdn.skypack.dev/leaflet';
-import {map} from './config/map.js';
+import {map} from './config/peta.js';
 
 
 

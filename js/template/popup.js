@@ -6,10 +6,7 @@ X   : #X#<br>
 Y   : #Y#<br>
 HDMS : #HDMS#<br>
 Volume : <input type="text" id="name" name="name" required>
-<button class="favorite styled"
-        type="button">
-    Kirim
-</button><br>
+<button id="cogbutton" type="button">Kirim</button><br>
 <a href="#">hapus marker ini</a>
 `
 

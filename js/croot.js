@@ -7,7 +7,7 @@ import {useGeographic} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 
 useGeographic();
 
-const place = [-110, 45];
+const place = [-6.8165156551551505, 107.13563336552649];
 
 
 const map = new Map({

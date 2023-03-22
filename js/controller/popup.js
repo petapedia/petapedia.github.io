@@ -33,5 +33,5 @@ export function onMapClick(evt) {
     setInner('popup-content',msg);
     setValue('long',coordinate[0]);
     setValue('lat',coordinate[1]);
-    overlay.setPosition(coordinate);
+    overlay.setPosition(tile);
 }

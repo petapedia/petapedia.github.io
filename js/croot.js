@@ -1,3 +1,5 @@
+import './css/style.css';
+
 import Map from 'https://petapedia.github.io/openlayers/src/ol/Map.js';
 import View from 'https://petapedia.github.io/openlayers/src/ol/View.js';
 import TileLayer from 'https://petapedia.github.io/openlayers/src/ol/layer/Tile.js';

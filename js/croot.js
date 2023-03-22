@@ -2,15 +2,16 @@ import {map,overlay} from './config/peta.js';
 import {toLonLat} from 'https://petapedia.github.io/ol/v7.3.0/proj.js';
 import {toStringHDMS} from 'https://petapedia.github.io/ol/v7.3.0/coordinate.js';
 import {clickpopup} from './template/popup.js';
-import {setInner,textBlur} from 'https://jscroot.github.io/element/croot.js';
+import {setInner,textBlur,onClick} from 'https://jscroot.github.io/element/croot.js';
 
 
-closer.onclick = function () {
+function onClosePopupClick() {
   overlay.setPosition(undefined);
   textBlur('popup-closer');
-  closer.blur();
   return false;
-};
+}
+
+onClick('popup-closer',onClosePopupClick);
 
 map.on('singleclick', function (evt) {
   const coordinate = evt.coordinate;

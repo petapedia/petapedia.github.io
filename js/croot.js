@@ -1,5 +1,5 @@
 import {map} from './config/peta.js';
-
+import Overlay from 'https://petapedia.github.io/ol/v7.3.0/Overlay.js';
 
 const container = document.getElementById('popup');
 const content = document.getElementById('popup-content');

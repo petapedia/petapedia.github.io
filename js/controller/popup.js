@@ -10,7 +10,6 @@ import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    //return false;
 }
 
 export function onSubmitPopupClick() {
@@ -22,7 +21,6 @@ export function onSubmitPopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     cogMarker(long,lat,volume);
-    //return false;
 }
 
 function afterSubmitCOG(result){
@@ -42,7 +40,6 @@ export function onMapSingleClick(evt) {
 export function onMapPointerMove(evt) {
   const pixel = map.getEventPixel(evt.originalEvent);
   const hit = map.hasFeatureAtPixel(pixel);
-  //map.getTarget().style.cursor = hit ? 'pointer' : '';
   map.getTargetElement().style.cursor = hit ? 'pointer' : '';
 }
 

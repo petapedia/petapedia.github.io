@@ -50,8 +50,6 @@ function popupGetMarker(evt,feature) {
     let title = feature.get('id')+"#"+feature.get('name');
     setInner('popupinfo-title',title);
     setValue('idmarker',feature.get('id'));
-    let gm = feature.get('geometry');
-    console.log(gm);
     let ctnt = "volume : "+feature.get('volume')+"<br>"+feature.get('geometry').flatCoordinates;
     setInner('popupinfo-content',ctnt);
     popupinfo.setPosition(evt.coordinate);

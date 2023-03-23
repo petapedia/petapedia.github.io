@@ -35,16 +35,11 @@ export function insertMarker(name,long,lat,volume){
 }
 
 export function deleteMarker(idmarker){
-    let lr = map.getLayers();
-    console.log(idmarker);
     let i=0;
-    lr.forEach(layer => {
+    map.getLayers().forEach(layer => {
       if (i !== 0) {
-        var features = layer.getSource().getFeatures();
-        console.log(features);
-        features.forEach( feature =>
+        layer.getSource().getFeatures().forEach( feature =>
           {
-            console.log(feature.get('id'));
             if (feature.get('id') == idmarker){
               map.removeLayer(layer);
               console.log("hapus layer");

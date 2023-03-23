@@ -47,12 +47,11 @@ function popupInputMarker(evt) {
 }
 
 function popupGetMarker(feature) {
-    let title = "<b>"+feature.get('id')+"#"+feature.get('name')+"</b><br>";
-    let msg = feature.get('geometry');
+    let title = feature.get('id')+"#"+feature.get('name');
+    setInner('popupinfo-title',title);
     setValue('idmarker',feature.get('id'));
-    let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
-    let lengkap = title+"volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus;
-    setInner('popupinfo',lengkap);
+    let ctnt = "volume : "+feature.get('volume')+"<br>"+feature.get('geometry');
+    setInner('popupinfo-content',ctnt);
     popupinfo.setPosition(tile);
 }
 

@@ -36,12 +36,14 @@ export function insertMarker(name,long,lat,volume){
 
 export function deleteMarker(idmarker){
     let i=0;
+    let sudahhapus=0;
     map.getLayers().forEach(layer => {
-      if (i !== 0) {
+      if (i !== 0 && sudahhapus === 0) {
         layer.getSource().getFeatures().forEach( feature =>
           {
             if (feature.get('id') == idmarker){
               map.removeLayer(layer);
+              sudahhapus=1;
               console.log("hapus layer");
               return;
             }

@@ -9,6 +9,14 @@ import Point from 'https://petapedia.github.io/ol/v7.3.0/geom/Point.js';
 import VectorSource from 'https://petapedia.github.io/ol/v7.3.0/source/Vector.js';
 import {Vector as VectorLayer} from 'https://petapedia.github.io/ol/v7.3.0/layer.js';
 
+import {
+    Circle,
+    Fill,
+    Icon,
+    Stroke,
+    Style,
+  } from 'https://petapedia.github.io/ol/v7.3.0/style.js';
+
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');

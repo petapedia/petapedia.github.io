@@ -15,7 +15,7 @@ export function cogMarker(long,lat){
         new Style({
           image: new Icon({
             anchor: [0.5, 1],
-            src: 'img/marker.svg',
+            src: 'img/icon.gif',
           }),
         })
       );

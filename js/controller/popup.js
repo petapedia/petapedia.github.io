@@ -2,7 +2,7 @@ import {toLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
 import {overlay,map,popupinfo,idmarker} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
-import {insertMarker} from './marker.js';
+import {insertMarker,deleteMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 
@@ -10,6 +10,12 @@ import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
+}
+
+export function onDeleteMarkerClick() {
+    let idmarker = getValue('idmarker');
+    popupinfo.setPosition(undefined);
+    deleteMarker(idmarker);
 }
 
 export function onSubmitMarkerClick() {
@@ -43,6 +49,7 @@ function popupInputMarker(evt) {
 function popupGetMarker(feature) {
     let title = "<b>"+feature.get('id')+"#"+feature.get('name')+"</b><br>";
     let msg = feature.get('geometry');
+    setValue('idmarker',feature.get('id'));
     let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
     let lengkap = title+"volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus;
     setInner('popupinfo',lengkap);

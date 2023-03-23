@@ -20,4 +20,12 @@ export function cogMarker(long,lat){
         })
       );
     markerSource.addFeatures(marker);
+    let vectorSource = new VectorSource({
+        features: [marker],
+    });
+    
+    let vectorLayer = new VectorLayer({
+    source: vectorSource,
+    });
+    map.addLayer(vectorLayer);
 }

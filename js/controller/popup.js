@@ -63,7 +63,7 @@ export function onMapClick(evt) {
     if (!feature) {
       return;
     }
-    setInner('popup',feature.get('volume'));
+    setInner('popupinfo',feature.get('volume'));
     overlay.setPosition(evt.coordinate);
     /*popover = new bootstrap.Popover(element, {
       placement: 'top',

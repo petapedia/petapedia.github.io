@@ -10,7 +10,7 @@ import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    return false;
+    //return false;
 }
 
 export function onSubmitPopupClick() {
@@ -22,7 +22,7 @@ export function onSubmitPopupClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     cogMarker(long,lat);
-    return false;
+    //return false;
 }
 
 function afterSubmitCOG(result){

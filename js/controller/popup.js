@@ -7,7 +7,7 @@ import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 import Feature from 'https://petapedia.github.io/ol/v7.3.0/Feature.js';
 import Point from 'https://petapedia.github.io/ol/v7.3.0/geom/Point.js';
 import VectorSource from 'https://petapedia.github.io/ol/v7.3.0/source/Vector.js';
-import RBush from 'https://unpkg.com/rbush@2.0.1/rbush.min.js';
+
 
 export function onClosePopupClick() {
     overlay.setPosition(undefined);

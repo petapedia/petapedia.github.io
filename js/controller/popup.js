@@ -1,6 +1,6 @@
 import {toLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
-import {overlay,map,popupinfo,id} from '../config/peta.js';
+import {overlay,map,popupinfo,idmarker} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
 import {insertMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
@@ -22,7 +22,7 @@ export function onSubmitMarkerClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     insertMarker(name,long,lat,volume);
-    id=id+1;
+    idmarker=idmarker+1;
 }
 
 function afterSubmitCOG(result){

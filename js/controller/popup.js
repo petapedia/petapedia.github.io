@@ -5,7 +5,7 @@ import {clickpopup} from '../template/popup.js';
 import {cogMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {map} from '../config/peta.js';
+import {map,overlay} from '../config/peta.js';
 
 
 export function onClosePopupClick() {
@@ -22,7 +22,7 @@ export function onSubmitPopupClick() {
     postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    cogMarker(long,lat);
+    cogMarker(long,lat,volume);
     //return false;
 }
 
@@ -50,10 +50,10 @@ function onMapPointerMove(evt) {
         var coordinate = evt.coordinate;    //default projection is EPSG:3857 you may want to use ol.proj.transform
 
         content.innerHTML = feature.get('desc');
-        popup.setPosition(coordinate);
+        overlay.setPosition(coordinate);
     }
     else {
-        popup.setPosition(undefined);
+        overlay.setPosition(undefined);
 
     }
 }

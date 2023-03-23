@@ -6,9 +6,10 @@ import {fromLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {Icon, Style} from 'https://cdn.skypack.dev/ol/style.js';
 import {map} from '../config/peta.js';
 
-export function cogMarker(long,lat){
+export function cogMarker(long,lat,volume){
     let marker = new Feature({
         type: 'icon',
+        desc : volume,
         geometry: new Point(fromLonLat([long, lat])),
     });
     marker.setStyle(

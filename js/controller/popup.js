@@ -46,13 +46,13 @@ function popupInputMarker(evt) {
     overlay.setPosition(tile);
 }
 
-function popupGetMarker(feature) {
+function popupGetMarker(evt,feature) {
     let title = feature.get('id')+"#"+feature.get('name');
     setInner('popupinfo-title',title);
     setValue('idmarker',feature.get('id'));
     let ctnt = "volume : "+feature.get('volume')+"<br>"+feature.get('geometry');
     setInner('popupinfo-content',ctnt);
-    popupinfo.setPosition(tile);
+    popupinfo.setPosition(evt.coordinate);
 }
 
 export function onMapPointerMove(evt) {
@@ -79,6 +79,6 @@ export function onMapClick(evt) {
         popupInputMarker(evt);
         return;
     }else{
-        popupGetMarker(feature);
+        popupGetMarker(evt,feature);
     }
   }

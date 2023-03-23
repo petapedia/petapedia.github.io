@@ -40,7 +40,8 @@ function popupInputMarker(evt) {
     overlay.setPosition(tile);
 }
 
-function popupGetMarker(tile,feature) {
+function popupGetMarker(evt,feature) {
+    let tile = evt.coordinate;
     let coordinate = toLonLat(tile);
     let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
     let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
@@ -73,6 +74,6 @@ export function onMapClick(evt) {
         popupInputMarker(evt);
         return;
     }else{
-        popupGetMarker(tile,feature);
+        popupGetMarker(evt,feature);
     }
   }

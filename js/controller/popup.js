@@ -5,6 +5,7 @@ import {clickpopup} from '../template/popup.js';
 import {cogMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
+import {map} from '../config/peta.js';
 
 
 export function onClosePopupClick() {
@@ -37,4 +38,22 @@ export function onMapClick(evt) {
     setValue('long',coordinate[0]);
     setValue('lat',coordinate[1]);
     overlay.setPosition(tile);
+}
+
+function onMapPointerMove(evt) {
+    var feature = map.forEachFeatureAtPixel(evt.pixel, function (feat, layer) {
+        return feat;
+    }
+    );
+
+    if (feature && feature.get('type') == 'Point') {
+        var coordinate = evt.coordinate;    //default projection is EPSG:3857 you may want to use ol.proj.transform
+
+        content.innerHTML = feature.get('desc');
+        popup.setPosition(coordinate);
+    }
+    else {
+        popup.setPosition(undefined);
+
+    }
 }

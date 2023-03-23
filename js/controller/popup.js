@@ -58,6 +58,7 @@ export function onMapClick(evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       return feature;
     });
+    overlay.setPosition(undefined);
     popupinfo.setPosition(undefined);
     //disposePopover();
     if (!feature) {

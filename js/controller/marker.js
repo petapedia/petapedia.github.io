@@ -33,3 +33,7 @@ export function insertMarker(name,long,lat,volume){
     });
     map.addLayer(vectorLayer);
 }
+
+export function deleteMarker(){
+    console.log();
+}

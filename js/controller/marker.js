@@ -38,10 +38,8 @@ export function deleteMarker(idmarker){
     let lr = map.getLayers();
     console.log(lr);
     lr.forEach(layer => {
-        var features = layer.getSource();
-        features.forEach(feature =>{
-          console.log(feature.get('id'));
-        });
+        var features = layer.getSource().getFeatures();
+        console.log(features.get('id'));
         if (layer.get('id') && layer.get('id') == idmarker){
             console.log("hapus layer");
             console.log(layer);

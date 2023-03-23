@@ -5,7 +5,6 @@ import {clickpopup} from '../template/popup.js';
 import {cogMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import {map,overlay} from '../config/peta.js';
 
 
 export function onClosePopupClick() {

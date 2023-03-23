@@ -33,7 +33,7 @@ export let map = new Map({
   overlays: [overlay],
   target: 'map',
   layers: [
-    basemap,
+    basemap, distloc
   ],
   view: defaultstartmap,
 });

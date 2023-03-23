@@ -37,9 +37,16 @@ export function insertMarker(name,long,lat,volume){
 export function deleteMarker(idmarker){
     let lr = map.getLayers();
     console.log(lr);
+    let i=0;
     lr.forEach(layer => {
-        var features = layer.getSource();
+      if (i !== 0) {
+        var features = layer.getSource().getFeatures();
         console.log(features);
+        features.forEach( feature =>
+          {
+            console.log(feature.get('id'));
+          }
+        );
         if (layer.get('id') && layer.get('id') == idmarker){
             console.log("hapus layer");
             console.log(layer);
@@ -47,5 +54,7 @@ export function deleteMarker(idmarker){
         }else{
             console.log("tidak ada layer ditemukan dari id");
         }
-      });
+      }
+      i++;
+    });
 }

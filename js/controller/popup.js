@@ -53,9 +53,9 @@ export function onMapPointerMove(evt) {
 
 let popover;
 export function disposePopover() {
-  if (popover) {
-    popover.dispose();
-    popover = undefined;
+  if (overlay || popupinfo) {
+    overlay.setPosition(undefined);
+    popupinfo.setPosition(undefined);
   }
 }
 

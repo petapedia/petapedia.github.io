@@ -34,6 +34,10 @@ export function insertMarker(name,long,lat,volume){
     map.addLayer(vectorLayer);
 }
 
-export function deleteMarker(){
-    console.log();
+export function deleteMarker(idmarker){
+    map.getLayers().forEach(layer => {
+        if (layer.get(idmarker) && layer.get(idmarker) == 'flag_vectorLayer'){
+            map.removeLayer(layer)
+        }
+      });
 }

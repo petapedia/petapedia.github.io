@@ -44,11 +44,9 @@ export function onMapPointerMove(evt) {
         return feat;
     }
     );
-
     if (feature && feature.get('type') == 'Point') {
         var coordinate = evt.coordinate;    //default projection is EPSG:3857 you may want to use ol.proj.transform
-
-        content.innerHTML = feature.get('desc');
+        setInner('popup-content',feature.get('desc'));
         overlay.setPosition(coordinate);
     }
     else {

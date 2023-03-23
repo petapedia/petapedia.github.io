@@ -12,7 +12,9 @@ import {Vector as VectorLayer} from 'https://cdn.skypack.dev/ol/layer.js';
 const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
 
 const place = [107.13563336552649,-6.8165156551551505];
-export let distloc = emptyMarker();
+
+export let markerSource = new VectorSource();
+
 const basemap = new TileLayer({
   source: new OSM({attributions: attributions,}),
 });
@@ -31,22 +33,15 @@ export const overlay = new Overlay({
     },
   });
 
-export function emptyMarker(){
-  let vectorSource = new VectorSource({
-      features: [],
+export const distmarker = new VectorLayer({
+  source: markerSource,
   });
-  
-  let vectorLayer = new VectorLayer({
-  source: vectorSource,
-  });
-  return vectorLayer;
-}
 
 export let map = new Map({
   overlays: [overlay],
   target: 'map',
   layers: [
-    basemap, distloc
+    basemap, distmarker
   ],
   view: defaultstartmap,
 });

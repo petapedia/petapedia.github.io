@@ -1,6 +1,6 @@
 import {toLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
-import {overlay,map} from '../config/peta.js';
+import {overlay,map,popupinfo} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
 import {cogMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
@@ -58,13 +58,13 @@ export function onMapClick(evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       return feature;
     });
-    overlay.setPosition(undefined);
+    popupinfo.setPosition(undefined);
     //disposePopover();
     if (!feature) {
       return;
     }
     setInner('popupinfo',feature.get('volume'));
-    overlay.setPosition(evt.coordinate);
+    popupinfo.setPosition(evt.coordinate);
     /*popover = new bootstrap.Popover(element, {
       placement: 'top',
       html: true,

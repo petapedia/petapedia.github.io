@@ -29,8 +29,17 @@ export const overlay = new Overlay({
     },
   });
 
+export const popupinfo = new Overlay({
+    element: container('popupinfo'),
+    autoPan: {
+      animation: {
+        duration: 250,
+      },
+    },
+});
+
 export let map = new Map({
-  overlays: [overlay],
+  overlays: [overlay,popupinfo],
   target: 'map',
   layers: [
     basemap

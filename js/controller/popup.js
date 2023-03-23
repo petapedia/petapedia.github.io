@@ -40,12 +40,11 @@ function popupInputMarker(evt) {
     overlay.setPosition(tile);
 }
 
-function popupGetMarker(evt,feature) {
-    let tile = evt.coordinate;
-    let coordinate = toLonLat(tile);
-    let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
+function popupGetMarker(feature) {
+    let title = "<b>"+feature.get('id')+"#"+feature.get('name')+"</b><br>";
+    let msg = feature.get('geometry');
     let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
-    let lengkap = "volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus
+    let lengkap = title+"volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus;
     setInner('popupinfo',lengkap);
     popupinfo.setPosition(tile);
 }
@@ -74,6 +73,6 @@ export function onMapClick(evt) {
         popupInputMarker(evt);
         return;
     }else{
-        popupGetMarker(evt,feature);
+        popupGetMarker(feature);
     }
   }

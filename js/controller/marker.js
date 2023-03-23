@@ -37,7 +37,7 @@ export function insertMarker(name,long,lat,volume){
 export function deleteMarker(idmarker){
     console.log(idmarker);
     map.getLayers().forEach(layer => {
-        if (layer.get(idmarker) && layer.get(idmarker) == 'flag_vectorLayer'){
+        if (layer.get('id') && layer.get('id') == idmarker){
             console.log("hapus layer");
             console.log(layer);
             map.removeLayer(layer);

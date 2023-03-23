@@ -55,21 +55,21 @@ export function disposePopover() {
 }
 
 export function onMapClick(evt) {
-    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+    let tile = evt.coordinate;
+    let feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       return feature;
     });
     overlay.setPosition(undefined);
     popupinfo.setPosition(undefined);
-    //disposePopover();
     if (!feature) {
-      return;
+        let coordinate = toLonLat(tile);
+        let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
+        setInner('popup-content',msg);
+        setValue('long',coordinate[0]);
+        setValue('lat',coordinate[1]);
+        overlay.setPosition(tile);
+        return;
     }
     setInner('popupinfo',feature.get('volume'));
-    popupinfo.setPosition(evt.coordinate);
-    /*popover = new bootstrap.Popover(element, {
-      placement: 'top',
-      html: true,
-      content: feature.get('volume'),
-    });
-    popover.show();*/
+    popupinfo.setPosition(tile);
   }

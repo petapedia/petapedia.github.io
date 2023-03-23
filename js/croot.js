@@ -4,7 +4,7 @@ import {onClick} from 'https://jscroot.github.io/element/croot.js';
 
 onClick('popup-closer',onClosePopupClick);
 onClick('cogbutton',onSubmitPopupClick);
-map.on('singleclick', onMapSingleClick);
+//map.on('singleclick', onMapSingleClick);
 map.on('click', onMapClick);
 map.on('pointermove', onMapPointerMove);
 map.on('movestart', disposePopover);

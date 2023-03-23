@@ -1,4 +1,4 @@
-import {toLonLat,fromLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
+import {toLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
 import {overlay,map} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';

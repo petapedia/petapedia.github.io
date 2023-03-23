@@ -2,7 +2,7 @@ import Feature from 'https://cdn.skypack.dev/ol/Feature.js';
 import Point from 'https://cdn.skypack.dev/ol/geom/Point.js';
 import VectorSource from 'https://cdn.skypack.dev/ol/source/Vector.js';
 import {Vector as VectorLayer} from 'https://cdn.skypack.dev/ol/layer.js';
-
+import {fromLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {Icon, Style} from 'https://cdn.skypack.dev/ol/style.js';
 
 export function cogMarker(long,lat){

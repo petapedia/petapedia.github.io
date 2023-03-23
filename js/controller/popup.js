@@ -68,7 +68,7 @@ export function onMapClick(evt) {
     overlay.setPosition(undefined);
     popupinfo.setPosition(undefined);
     if (!feature) {
-        popupInputMarker(tile,evt);
+        popupInputMarker(evt);
         return;
     }else{
         popupGetMarker(tile,feature);

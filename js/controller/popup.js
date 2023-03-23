@@ -65,7 +65,7 @@ export function onMapClick(evt) {
     popover = new bootstrap.Popover(element, {
       placement: 'top',
       html: true,
-      content: feature.get('name'),
+      content: feature.get('volume'),
     });
     popover.show();
   }

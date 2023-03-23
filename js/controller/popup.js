@@ -1,8 +1,8 @@
 import {toLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
-import {overlay,map,popupinfo} from '../config/peta.js';
+import {overlay,map,popupinfo,id} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
-import {cogMarker} from './marker.js';
+import {insertMarker} from './marker.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
 
@@ -12,15 +12,17 @@ export function onClosePopupClick() {
     textBlur('popup-closer');
 }
 
-export function onSubmitPopupClick() {
+export function onSubmitMarkerClick() {
     let long = getValue('long');
     let lat = getValue('lat');
+    let name = getValue('name');
     let volume = getValue('volume');
     let data = {long,lat,volume};
     postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    cogMarker(long,lat,volume);
+    insertMarker(name,long,lat,volume);
+    id=id+1;
 }
 
 function afterSubmitCOG(result){

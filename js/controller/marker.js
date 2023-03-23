@@ -7,7 +7,7 @@ import {Icon, Style} from 'https://cdn.skypack.dev/ol/style.js';
 import {map} from '../config/peta.js';
 
 export function cogMarker(long,lat){
-    const marker = new Feature({
+    let marker = new Feature({
         type: 'icon',
         geometry: new Point(fromLonLat([long, lat])),
     });
@@ -15,15 +15,15 @@ export function cogMarker(long,lat){
         new Style({
           image: new Icon({
             anchor: [0.5, 1],
-            src: 'img/icon.png',
+            src: 'img/marker.svg',
           }),
         })
       );
-    const vectorSource = new VectorSource({
+    let vectorSource = new VectorSource({
         features: [marker],
     });
     
-    const vectorLayer = new VectorLayer({
+    let vectorLayer = new VectorLayer({
     source: vectorSource,
     });
     map.addLayer(vectorLayer);

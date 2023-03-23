@@ -48,6 +48,7 @@ export function deleteMarker(idmarker){
             if (feature.get('id') == idmarker){
               map.removeLayer(layer);
               console.log("hapus layer");
+              return;
             }
           }
         );

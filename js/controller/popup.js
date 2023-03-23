@@ -29,7 +29,7 @@ function afterSubmitCOG(result){
     console.log(result);
 }
 
-export function onMapClick(evt) {
+export function onMapSingleClick(evt) {
     const tile = evt.coordinate;
     let coordinate = toLonLat(tile);
     let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
@@ -40,17 +40,32 @@ export function onMapClick(evt) {
 }
 
 export function onMapPointerMove(evt) {
-    var feature = map.forEachFeatureAtPixel(evt.pixel, function (feat, layer) {
-        return feat;
-    }
-    );
-    if (feature && feature.get('type') == 'Point') {
-        var coordinate = evt.coordinate;    //default projection is EPSG:3857 you may want to use ol.proj.transform
-        setInner('popup-content',feature.get('desc'));
-        overlay.setPosition(coordinate);
-    }
-    else {
-        overlay.setPosition(undefined);
-
-    }
+  const pixel = map.getEventPixel(evt.originalEvent);
+  const hit = map.hasFeatureAtPixel(pixel);
+  map.getTarget().style.cursor = hit ? 'pointer' : '';
 }
+
+let popover;
+export function disposePopover() {
+  if (popover) {
+    popover.dispose();
+    popover = undefined;
+  }
+}
+
+export function onMapClick(evt) {
+    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
+      return feature;
+    });
+    disposePopover();
+    if (!feature) {
+      return;
+    }
+    overlay.setPosition(evt.coordinate);
+    popover = new bootstrap.Popover(element, {
+      placement: 'top',
+      html: true,
+      content: feature.get('name'),
+    });
+    popover.show();
+  }

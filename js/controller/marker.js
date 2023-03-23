@@ -9,13 +9,15 @@ import {map} from '../config/peta.js';
 export function cogMarker(long,lat,volume){
     let marker = new Feature({
         type: 'icon',
-        desc : volume,
+        volume : volume,
         geometry: new Point(fromLonLat([long, lat])),
     });
     marker.setStyle(
         new Style({
           image: new Icon({
-            anchor: [0.5, 1],
+            anchor: [0.5, 46],
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'pixels',
             src: 'img/icon.png',
           }),
         })

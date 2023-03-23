@@ -14,7 +14,6 @@ export function onClosePopupClick() {
 
 export function onDeleteMarkerClick() {
     let idmarker = getValue('idmarker');
-    console.log(idmarker);
     popupinfo.setPosition(undefined);
     deleteMarker(idmarker);
 }

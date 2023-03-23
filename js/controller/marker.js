@@ -35,10 +35,13 @@ export function insertMarker(name,long,lat,volume){
 }
 
 export function deleteMarker(idmarker){
+    console.log(idmarker);
     map.getLayers().forEach(layer => {
         if (layer.get(idmarker) && layer.get(idmarker) == 'flag_vectorLayer'){
             console.log(layer);
             map.removeLayer(layer);
+        }else{
+            console.log("tidak ada layer ditemukan dari id");
         }
       });
 }

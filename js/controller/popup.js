@@ -42,7 +42,8 @@ export function onMapSingleClick(evt) {
 export function onMapPointerMove(evt) {
   const pixel = map.getEventPixel(evt.originalEvent);
   const hit = map.hasFeatureAtPixel(pixel);
-  map.getTarget().style.cursor = hit ? 'pointer' : '';
+  //map.getTarget().style.cursor = hit ? 'pointer' : '';
+  map.getTargetElement().style.cursor = hit ? 'pointer' : '';
 }
 
 let popover;

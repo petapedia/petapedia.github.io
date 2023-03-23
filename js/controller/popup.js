@@ -36,6 +36,15 @@ function popupInputMarker(tile) {
     overlay.setPosition(tile);
 }
 
+function popupGetMarker(tile,feature) {
+    let coordinate = toLonLat(tile);
+    let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
+    let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
+    let lengkap = "volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus
+    setInner('popupinfo',msg);
+    popupinfo.setPosition(tile);
+}
+
 export function onMapPointerMove(evt) {
   const pixel = map.getEventPixel(evt.originalEvent);
   const hit = map.hasFeatureAtPixel(pixel);
@@ -60,7 +69,7 @@ export function onMapClick(evt) {
     if (!feature) {
         popupInputMarker(tile);
         return;
+    }else{
+        popupGetMarker(tile,feature);
     }
-    setInner('popupinfo',feature.get('volume'));
-    popupinfo.setPosition(tile);
   }

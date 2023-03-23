@@ -3,7 +3,7 @@ import Point from 'https://petapedia.github.io/ol/v7.3.0/geom/Point.js';
 import VectorSource from 'https://petapedia.github.io/ol/v7.3.0/source/Vector.js';
 import {Vector as VectorLayer} from 'https://petapedia.github.io/ol/v7.3.0/layer.js';
 
-import {Icon, Style} from 'https://petapedia.github.io/ol/v7.3.0/style.js';
+//import {Icon, Style} from 'https://petapedia.github.io/ol/v7.3.0/style.js';
 
 export function cogMarker(long,lat){
     const marker = new Feature({

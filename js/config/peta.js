@@ -13,8 +13,6 @@ const attributions = '<a href="https://petapedia.github.io/" target="_blank">&co
 
 const place = [107.13563336552649,-6.8165156551551505];
 
-export let markerSource = new VectorSource();
-
 const basemap = new TileLayer({
   source: new OSM({attributions: attributions,}),
 });
@@ -33,9 +31,10 @@ export const overlay = new Overlay({
     },
   });
 
-export const distmarker = new VectorLayer({
+export let markerSource = new VectorSource();
+const distmarker = new VectorLayer({
   source: markerSource,
-  });
+});
 
 export let map = new Map({
   overlays: [overlay],

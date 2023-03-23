@@ -39,7 +39,7 @@ export function onMapClick(evt) {
     overlay.setPosition(tile);
 }
 
-function onMapPointerMove(evt) {
+export function onMapPointerMove(evt) {
     var feature = map.forEachFeatureAtPixel(evt.pixel, function (feat, layer) {
         return feat;
     }

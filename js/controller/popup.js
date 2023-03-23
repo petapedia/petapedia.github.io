@@ -27,8 +27,7 @@ function afterSubmitCOG(result){
     console.log(result);
 }
 
-export function onMapSingleClick(evt) {
-    const tile = evt.coordinate;
+function popupInputMarker(tile) {
     let coordinate = toLonLat(tile);
     let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
     setInner('popup-content',msg);
@@ -59,12 +58,7 @@ export function onMapClick(evt) {
     overlay.setPosition(undefined);
     popupinfo.setPosition(undefined);
     if (!feature) {
-        let coordinate = toLonLat(tile);
-        let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
-        setInner('popup-content',msg);
-        setValue('long',coordinate[0]);
-        setValue('lat',coordinate[1]);
-        overlay.setPosition(tile);
+        popupInputMarker(tile);
         return;
     }
     setInner('popupinfo',feature.get('volume'));

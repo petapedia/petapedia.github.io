@@ -42,7 +42,7 @@ function popupInputMarker(evt) {
 function popupGetMarker(tile,feature) {
     let coordinate = toLonLat(tile);
     let msg = clickpopup.replace("#LONG#",coordinate[0]).replace("#LAT#",coordinate[1]).replace('#X#',tile[0]).replace('#Y#',tile[1]).replace('#HDMS#',toStringHDMS(coordinate));
-    let msg = msg + "Pixel : "+evt.pixel+"<br>"
+    msg = msg + "Pixel : "+evt.pixel+"<br>"
     let buttonhapus = '<button id="hapusbutton" type="button">Hapus</button><br>';
     let lengkap = "volume : "+feature.get('volume')+"<br>"+msg+"<br>"+buttonhapus
     setInner('popupinfo',lengkap);

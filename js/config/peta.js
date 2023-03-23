@@ -10,7 +10,7 @@ import {container} from 'https://jscroot.github.io/element/croot.js';
 const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
 
 const place = [107.13563336552649,-6.8165156551551505];
-
+export let distloc = emptyMarker();
 const basemap = new TileLayer({
   source: new OSM({attributions: attributions,}),
 });
@@ -29,6 +29,17 @@ export const overlay = new Overlay({
     },
   });
 
+export function emptyMarker(){
+  let vectorSource = new VectorSource({
+      features: [],
+  });
+  
+  let vectorLayer = new VectorLayer({
+  source: vectorSource,
+  });
+  return vectorLayer;
+}
+
 export let map = new Map({
   overlays: [overlay],
   target: 'map',
@@ -37,3 +48,4 @@ export let map = new Map({
   ],
   view: defaultstartmap,
 });
+

@@ -4,18 +4,7 @@ import {overlay,map} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
 import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
 import { postWithToken } from "https://jscroot.github.io/api/croot.js";
-import Feature from 'https://petapedia.github.io/ol/v7.3.0/Feature.js';
-import Point from 'https://petapedia.github.io/ol/v7.3.0/geom/Point.js';
-import VectorSource from 'https://petapedia.github.io/ol/v7.3.0/source/Vector.js';
-import {Vector as VectorLayer} from 'https://petapedia.github.io/ol/v7.3.0/layer.js';
 
-import {
-    Circle,
-    Fill,
-    Icon,
-    Stroke,
-    Style,
-  } from 'https://petapedia.github.io/ol/v7.3.0/style.js';
 
 export function onClosePopupClick() {
     overlay.setPosition(undefined);
@@ -31,18 +20,6 @@ export function onSubmitPopupClick() {
     postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    const marker = new Feature({
-        type: 'icon',
-        geometry: new Point(fromLonLat([long, lat])),
-    });
-    const vectorSource = new VectorSource({
-        features: [marker],
-    });
-    
-    const vectorLayer = new VectorLayer({
-    source: vectorSource,
-    });
-    map.addLayer(vectorLayer);
     return false;
 }
 

@@ -38,7 +38,7 @@ export function deleteMarker(idmarker){
     let lr = map.getLayers();
     console.log(lr);
     lr.forEach(layer => {
-        var features = layer.getSource().getFeatures();
+        var features = layer.getSource();
         features.forEach(feature =>{
           console.log(feature.get('id'));
         });

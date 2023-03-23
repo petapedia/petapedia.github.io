@@ -45,15 +45,12 @@ export function deleteMarker(idmarker){
         features.forEach( feature =>
           {
             console.log(feature.get('id'));
+            if (feature.get('id') === idmarker){
+              map.removeLayer(layer);
+              console.log("hapus layer");
+            }
           }
         );
-        if (layer.get('id') && layer.get('id') == idmarker){
-            console.log("hapus layer");
-            console.log(layer);
-            map.removeLayer(layer);
-        }else{
-            console.log("tidak ada layer ditemukan dari id");
-        }
       }
       i++;
     });

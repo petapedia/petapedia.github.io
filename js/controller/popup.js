@@ -58,15 +58,17 @@ export function onMapClick(evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) {
       return feature;
     });
-    disposePopover();
+    overlay.setPosition(undefined);
+    //disposePopover();
     if (!feature) {
       return;
     }
+    setInner('popup',feature.get('volume'));
     overlay.setPosition(evt.coordinate);
-    popover = new bootstrap.Popover(element, {
+    /*popover = new bootstrap.Popover(element, {
       placement: 'top',
       html: true,
       content: feature.get('volume'),
     });
-    popover.show();
+    popover.show();*/
   }

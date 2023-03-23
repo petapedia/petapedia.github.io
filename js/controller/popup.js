@@ -22,7 +22,7 @@ export function onSubmitMarkerClick() {
     overlay.setPosition(undefined);
     textBlur('popup-closer');
     insertMarker(name,long,lat,volume);
-    idmarker=idmarker+1;
+    idmarker.id=idmarker.id+1;
 }
 
 function afterSubmitCOG(result){

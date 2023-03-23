@@ -11,7 +11,7 @@ const attributions = '<a href="https://petapedia.github.io/" target="_blank">&co
 
 const place = [107.13563336552649,-6.8165156551551505];
 
-export let idmarker = 1;
+export let idmarker = {id:1};
 
 const basemap = new TileLayer({
   source: new OSM({attributions: attributions,}),

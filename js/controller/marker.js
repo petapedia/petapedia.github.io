@@ -39,7 +39,7 @@ export function deleteMarker(idmarker){
     console.log(lr);
     lr.forEach(layer => {
         var features = layer.getSource();
-        console.log(features.get('id'));
+        console.log(features);
         if (layer.get('id') && layer.get('id') == idmarker){
             console.log("hapus layer");
             console.log(layer);

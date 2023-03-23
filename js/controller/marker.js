@@ -9,7 +9,7 @@ import {map,idmarker} from '../config/peta.js';
 export function insertMarker(name,long,lat,volume){
     let marker = new Feature({
         type: 'icon',
-        id : idmarker,
+        id : idmarker.id,
         name : name,
         volume : volume,
         geometry: new Point(fromLonLat([long, lat])),

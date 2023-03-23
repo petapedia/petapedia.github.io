@@ -21,7 +21,7 @@ export function onSubmitPopupClick() {
     postWithToken("https://eoqc0wqfm9sjc6y.m.pipedream.net","Token","dsf9ygf87h98u479y98dj0fs89nfd7",data,afterSubmitCOG);
     overlay.setPosition(undefined);
     textBlur('popup-closer');
-    cogMarker(long,lat);
+    //cogMarker(long,lat);
     return false;
 }
 

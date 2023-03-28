@@ -1,6 +1,6 @@
 import {map,idmarker} from '../config/peta.js';
 
-export function getAllCoordinates(idmarker){
+export function getAllCoordinates(){
     let i=0;
     let sudahhapus=0;
     let pointlist = [];

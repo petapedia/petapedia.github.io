@@ -8,7 +8,7 @@ export function getAllCoordinates(){
       if (i !== 0 && sudahhapus === 0) {
         layer.getSource().getFeatures().forEach( feature =>
           {
-            node = {
+            let node = {
                 id : feature.get('id'),
                 name : feature.get('name'),
                 volume : feature.get('volume'),

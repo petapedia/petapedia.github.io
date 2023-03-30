@@ -27,8 +27,8 @@ export function getAllCoordinates(){
       i++;
     });
     console.log(pointlist);
-    x=Xcog/totaldemand;
-    y=Ycog/totaldemand;
+    let x=Xcog/totaldemand;
+    let y=Ycog/totaldemand;
     console.log(x);
     console.log(y);
 }

@@ -57,6 +57,9 @@ export function deleteMarker(idmarker){
 export function insertMarkerCOG(x,y){
   let marker = new Feature({
       type: 'icon',
+      id : idmarker.id,
+      name : 'Centor of Grafity',
+      volume : '0',
       geometry: new Point([x, y]),
   });
   marker.setStyle(

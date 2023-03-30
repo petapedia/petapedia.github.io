@@ -58,8 +58,8 @@ export function insertMarkerCOG(x,y){
   let marker = new Feature({
       type: 'icon',
       id : idmarker.id,
-      name : 'Centor of Grafity',
-      volume : '0',
+      name : 'Center of Grafity',
+      volume : '-',
       geometry: new Point([x, y]),
   });
   marker.setStyle(

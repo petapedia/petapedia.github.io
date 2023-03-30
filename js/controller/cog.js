@@ -1,5 +1,6 @@
 import {map,idmarker} from '../config/peta.js';
 import {insertMarkerCOG} from '../controller/marker.js';
+import {disposePopover} from '../controller/popup.js';
 
 export function getAllCoordinates(){
     let i=0;
@@ -33,4 +34,5 @@ export function getAllCoordinates(){
     console.log(x);
     console.log(y);
     insertMarkerCOG(x,y);
+    disposePopover();
 }

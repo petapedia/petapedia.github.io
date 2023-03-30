@@ -53,3 +53,28 @@ export function deleteMarker(idmarker){
       i++;
     });
 }
+
+export function insertMarkerCOG(x,y){
+  let marker = new Feature({
+      type: 'icon',
+      geometry: new Point([x, y]),
+  });
+  marker.setStyle(
+      new Style({
+        image: new Icon({
+          anchor: [0.5, 46],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: 'img/icog.png',
+        }),
+      })
+    );
+  let vectorSource = new VectorSource({
+      features: [marker],
+  });
+  
+  let vectorLayer = new VectorLayer({
+  source: vectorSource,
+  });
+  map.addLayer(vectorLayer);
+}

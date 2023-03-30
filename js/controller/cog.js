@@ -1,4 +1,5 @@
 import {map,idmarker} from '../config/peta.js';
+import {insertMarkerCOG} from '../controller/marker.js';
 
 export function getAllCoordinates(){
     let i=0;
@@ -31,4 +32,5 @@ export function getAllCoordinates(){
     let y=Ycog/totaldemand;
     console.log(x);
     console.log(y);
+    insertMarkerCOG(x,y);
 }

@@ -5,7 +5,7 @@ import XYZ from 'https://cdn.skypack.dev/ol/source/XYZ.js';
 import OSM from 'https://cdn.skypack.dev/ol/source/OSM.js';
 import {fromLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import Overlay from 'https://cdn.skypack.dev/ol/Overlay.js';
-import {container} from 'https://jscroot.github.io/element/croot.js';
+import {container} from 'https://cdn.jsdelivr.net/gh/jscroot/element@0.1.7/croot.js';
 
 const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
 

@@ -1,6 +1,6 @@
 import {map} from './config/peta.js';
 import {onClosePopupClick,onDeleteMarkerClick,onSubmitMarkerClick,onMapClick,onMapPointerMove,disposePopover} from './controller/popup.js';
-import {onClick} from 'https://jscroot.github.io/element/croot.js';
+import {onClick} from 'https://cdn.jsdelivr.net/gh/jscroot/element@0.1.7/croot.js';
 import {getAllCoordinates} from './controller/cog.js';
 
 onClick('popup-closer',onClosePopupClick);
